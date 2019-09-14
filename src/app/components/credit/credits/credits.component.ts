@@ -11,7 +11,7 @@ import { selectConfig } from '../../../userStore/selectors/config.selector';
   styleUrls: ['./credits.component.scss']
 })
 export class CreditsComponent implements OnInit {
-  title = 'User Credit';
+  title = 'Angular-NgRx: User Credit';
   config$ = this._store.pipe(select(selectConfig));
 
   constructor(private _store: Store<IAppState>) { }
