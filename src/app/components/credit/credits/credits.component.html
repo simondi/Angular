@@ -4,9 +4,7 @@
     Welcome to {{ title }}!
   </h1>
 </div>
-<h2 appHighlight>Wen </h2>
 <ul>
-
   <li>
     <a routerLink="/tutorials"><button class="btn btn-success pull-right">Tutorials</button></a>
   </li>
@@ -14,7 +12,7 @@
 
 <nav class="navbar d-flex">
   <a class="navbar-brand"
-     routerLink="/">
+     routerLink="/credits">
     Angular - NGRX / {{ (config$ | async)?.adminName }}
   </a>
   <div class="d-flex justify-content-end">
@@ -31,7 +29,4 @@
   <router-outlet></router-outlet>
 </div>
 
-
-
-<router-outlet></router-outlet>
 

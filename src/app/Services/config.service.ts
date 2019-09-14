@@ -1,20 +1,24 @@
 import { Observable } from 'rxjs';
 import { Injectable } from '@angular/core';
 import { IUserHttp } from '../models/http-models/user-http-interface';
+
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
 
+import { IConfig } from '../models/config.interface';
 
-@Injectable( )
+
+@Injectable({
+  providedIn: 'root'
+})
 export class ConfigService {
 
-  configUrl = '';
+  configUrl = `${environment.apiUrl}config.json`;
 
-  constructor(private http: HttpClient) { }
+  constructor(private _http: HttpClient) { }
 
-  getConfig() {
-    // #enddocregion getConfig_1, getConfig_2, getConfig_3
-    return '';
+  getConfig(): Observable<IConfig> {
+    return this._http.get<IConfig>(this.configUrl);
   }
 }
 
